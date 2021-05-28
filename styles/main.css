@@ -3,6 +3,11 @@
   src: url(fonts/Anders.ttf);
 }
 
+@font-face {
+  font-family: secondary;
+  src: url(fonts/Lovelo-Black.otf);
+}
+
 /* Firefox < 16 */
 @-moz-keyframes fadein {
     from { opacity: 0; }
@@ -42,7 +47,7 @@ body, html
 	margin: 0;
 	background-color: #1c1c1c;
 	
-	font-family: 'Century Gothic';
+	font-family: 'Century Gothic', secondary;
 	font-weight: bold;
 	font-size: 20px;
 	text-align: center;
