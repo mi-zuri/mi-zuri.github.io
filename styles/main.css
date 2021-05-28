@@ -36,7 +36,6 @@ html::-webkit-scrollbar
 }
 
 
-
 body, html
 {
 	height: 100%;
@@ -62,6 +61,8 @@ body, html
     -moz-animation: fadein 2s; /* Firefox < 16 */
     -ms-animation: fadein 2s; /* Internet Explorer */
     -o-animation: fadein 2s; /* Opera < 12.1 */
+	
+	overflow: hidden;
 }
 
 #header-bg
@@ -73,7 +74,6 @@ body, html
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-
 }
 
 #header-bg h1
@@ -185,6 +185,7 @@ section #home
 	background-repeat: no-repeat;
 	background-size: cover;
 	min-width: 700px;
+	overflow: hidden;
 }
 
 #footer-bg #items
