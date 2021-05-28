@@ -249,3 +249,8 @@ section #home
 {
 #header-bg #menuBtn {display:none;}
 }
+
+@media (max-width: 400px)
+{
+#footer-bg #items p {font-size: 15px;}
+}
