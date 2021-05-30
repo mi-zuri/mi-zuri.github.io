@@ -36,15 +36,15 @@
 				</div>
 			</section>
 			<nav>
-				<div id="mySidebar">
+				<div id="sidebar">
 					<div id="padding"></div>
 					<div id="list">
-						<a href="#">About</a>
-						<a href="#">Services</a>
-						<a href="#">Clients</a>
-						<a href="#">Contact</a>
+						<a href="#1">About</a>
+						<a href="#2">Services</a>
+						<a href="#3">Clients</a>
+						<a href="#4">Contact</a>
 					</div>
-					<div id="ver"><p>ver. 1.04</p></div>
+					<div id="ver"><p>ver. 1.04a</p></div>
 				</div>
 			</nav>
 			<footer>
@@ -65,13 +65,13 @@
 			var windowCheck = window.matchMedia("(max-width: 700px)")
 			
 			function openNav() {
-				document.getElementById("mySidebar").style.width = "250px";
+				document.getElementById("sidebar").style.width = "250px";
 				document.getElementById("container").style.marginRight = "250px";
 				toggleBtn = true;
 			}
 
 			function closeNav() {
-				document.getElementById("mySidebar").style.width = "0";
+				document.getElementById("sidebar").style.width = "0";
 				document.getElementById("container").style.marginRight= "0";
 				toggleBtn = false;
 			}
@@ -83,7 +83,7 @@
 			
 			function checkNav(windowCheck) {
 				if (windowCheck.matches) { // If media query matches
-					document.getElementById("mySidebar").style.width = "0";
+					document.getElementById("sidebar").style.width = "0";
 					document.getElementById("container").style.marginRight= "0";
 					if(toggleBtn == true){
 						document.getElementById("menuBtn").classList.toggle("change");
