@@ -14,11 +14,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	</head>
 	
-	<body onload="changeSlide(projectNumber)">
+	<body id="stopScroll" onload="changeSlide(projectNumber)">
+		<div id="start" onclick="closeStart()">
+			<i class="arrow down"></i>
+		</div>
 		<div id="container">
 			<header>
 				<div id="header-bg">
-					<a href="index.html"><h1>Michu</h1></a>
+					<a onclick="changeSlide(projectNumber = 0)"><h1>Michu</h1></a>
 					<div id="items">
 						<div id="menuBtn" onclick="toggleNav(this)">
 							<div id="bar1"></div>
@@ -46,7 +49,7 @@
 					<div class="audiobook"><p>Audiobook</p></div>
 					<div class="movie"><p>Film "Stop alkoholowi"</p></div>
 				</div>
-				<div id="error"><p>Unfortunately your screen size is too low to support this page :(</p></div>
+				<div id="error"><p>Unfortunately your screen size is too low to support this page<br/>:(</p></div>
 			</section>
 			<nav>
 				<div id="sidebar">
@@ -57,7 +60,7 @@
 						<a href="#3">Clients</a>
 						<a href="#4">Contact</a>
 					</div>
-					<div id="ver"><p>ver. 1.1</p></div>
+					<div id="ver"><p>ver. 1.1.5</p></div>
 				</div>
 			</nav>
 			<footer>
@@ -74,6 +77,15 @@
 		
 		
 		<script>
+			function closeStart() {
+				document.getElementById("start").style.height = "0";
+				document.getElementById('container').style.visibility='visible';
+				document.getElementById('stopScroll').style.overflow='scroll';
+				changeSlide();
+			}
+			
+			
+		
 			var toggleBtn = false;
 			var windowCheck = window.matchMedia("(max-width: 750px)")
 			
@@ -105,7 +117,7 @@
 				}
 			}
 			
-			windowCheck.addListener(checkNav)
+			windowCheck.addListener(checkNav);
 			
 			
 			/*var windowSize = 320;
@@ -129,6 +141,14 @@
 					document.getElementsByClassName('about')[0].style.display='block';
 					document.getElementsByClassName('photos')[0].style.display='none';
 					document.getElementsByClassName('photos')[1].style.display='none';
+					document.getElementsByClassName('blender')[0].style.display='none';
+					document.getElementsByClassName('blender')[1].style.display='none';
+					document.getElementsByClassName('inkscape')[0].style.display='none';
+					document.getElementsByClassName('inkscape')[1].style.display='none';
+					document.getElementsByClassName('audiobook')[0].style.display='none';
+					document.getElementsByClassName('audiobook')[1].style.display='none';
+					document.getElementsByClassName('movie')[0].style.display='none';
+					document.getElementsByClassName('movie')[1].style.display='none';
 					document.getElementsByClassName('arrow left')[0].style.display='none';
 					window.scrollTo({top: 320, behavior: "smooth"});
 					break;

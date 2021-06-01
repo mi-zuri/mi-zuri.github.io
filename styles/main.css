@@ -46,7 +46,6 @@ body, html
 	height: 100%;
 	margin: 0;
 	background-color: #1c1c1c;
-	
 	font-family: 'Century Gothic', secondary;
 	font-weight: bold;
 	font-size: 20px;
@@ -56,6 +55,58 @@ body, html
 	/* hides scrollbar for old browsers*/
 	-ms-overflow-style: none;
 	scrollbar-width: none;
+}
+
+#stopScroll
+{
+	overflow: hidden;
+}
+
+#start
+{
+	width:100%;
+	height:100%;
+	background-image: url("img/starter.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	overflow-x: hidden;
+	transition: 0.5s;
+	
+	-webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+    -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+}
+
+/* hides scrollbar */
+#start::-webkit-scrollbar
+{
+	display: none;
+}
+
+.arrow.down 
+{
+	position: absolute;
+	
+	border: solid #1c1c1c;
+	border-width: 0px 5px 5px 0px;
+	display: inline-block;
+	margin-left: -30px;
+	padding: 30px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	bottom: 5%;
+}
+
+.arrow.down:hover
+{
+	border-width: 0 7px 7px 0;
+	cursor: pointer;
 }
 
 #container
@@ -68,6 +119,7 @@ body, html
     -o-animation: fadein 2s; /* Opera < 12.1 */
 	
 	overflow: hidden;
+	visibility: hidden;
 }
 
 #header-bg
