@@ -3,18 +3,18 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-		<meta name="Description" content="Info - Michał Żurawski"/>
-		<meta name="Keywords" content="Michał Żurawski, Szczecin, LO2, menu, start, info, html, css"/>
+		<meta name="Description" content="Michał Żurawski - Prezentacja projektów na multimedia"/>
+		<meta name="Keywords" content="Michał Żurawski, Szczecin, LO2, Multimedia, Michu"/>
 		<meta name="Author" content="Michał Żurawski"/>
 		
-		<title>Menu</title>
+		<title>Michu</title>
 		
 		<link href="styles/main.css" rel="stylesheet" type="text/css"/>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	</head>
 	
-	<body>
+	<body onload="changeSlide(projectNumber)">
 		<div id="container">
 			<header>
 				<div id="header-bg">
@@ -29,13 +29,22 @@
 				</div>
 			</header>
 			<section>
-				<i class="arrow left"></i>
-				<i class="arrow right"></i>
+				<i class="arrow left" onclick="changeSlide(projectNumber--)"></i>
+				<i class="arrow right" onclick="changeSlide(projectNumber++)"></i>
 				<div id="media">
-					<!-- <div id="about"> -->
-						<!-- <p>Cześć, nazywam się Michał Żurawski i jestem uczniem II Liceum Ogólnokształcącego im. Mieszka I w Szczecinie.</p> -->
-					<!-- </div> -->
-					<div id="blender"><iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe></div>
+					<div class="about"><p>Witam <3<br/><br/>Nazywam się Michał Żurawski i jestem uczniem klasy 2GF w II Liceum Ogólnokształcącym im. Mieszka I w Szczecinie.<br/><br/>Strona ta jest obecnie poświęcona pracom, które zostaly przeze mnie wykonane przez ostatni rok na lekcje multimediów.</p></div>
+					<div class="photos"></div>
+					<div class="blender"><iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe></div>
+					<div class="inkscape"></div>
+					<div class="audiobook"></div>
+					<div class="movie"></div>
+				</div>
+				<div id="titles">
+					<div class="photos"><p>Moje zdjęcia</p></div>
+					<div class="blender"><p>Animacja na 75-lecie szkoły</p></div>
+					<div class="inkscape"><p>Grafika wektorowa "Firma"</p></div>
+					<div class="audiobook"><p>Audiobook</p></div>
+					<div class="movie"><p>Film "Stop alkoholowi"</p></div>
 				</div>
 				<div id="error"><p>Unfortunately your screen size is too low to support this page :(</p></div>
 			</section>
@@ -48,7 +57,7 @@
 						<a href="#3">Clients</a>
 						<a href="#4">Contact</a>
 					</div>
-					<div id="ver"><p>ver. 1.05</p></div>
+					<div id="ver"><p>ver. 1.1</p></div>
 				</div>
 			</nav>
 			<footer>
@@ -97,6 +106,79 @@
 			}
 			
 			windowCheck.addListener(checkNav)
+			
+			
+			/*var windowSize = 320;
+			
+			function assignWindowSize(){
+				if (window.matchMedia("(min-width: 1350px)")){
+				windowSize = 320;
+				} else if (window.matchMedia("(min-width: 450px) and (max-width: 1350px)")){
+				windowSize = 200;
+				} else if (window.matchMedia("(min-width: 450px) and (max-width: 450px)")){
+				windowSize = 200;
+				}
+			}*/
+			
+			//change "slides"
+			var projectNumber = 0;
+			
+			function changeSlide(){
+				switch(projectNumber){
+					case 0:
+					document.getElementsByClassName('about')[0].style.display='block';
+					document.getElementsByClassName('photos')[0].style.display='none';
+					document.getElementsByClassName('photos')[1].style.display='none';
+					document.getElementsByClassName('arrow left')[0].style.display='none';
+					window.scrollTo({top: 320, behavior: "smooth"});
+					break;
+					case 1:
+					document.getElementsByClassName('about')[0].style.display='none';
+					document.getElementsByClassName('photos')[0].style.display='block';
+					document.getElementsByClassName('photos')[1].style.display='inline';
+					document.getElementsByClassName('blender')[0].style.display='none';
+					document.getElementsByClassName('blender')[1].style.display='none';
+					document.getElementsByClassName('arrow left')[0].style.display='block';
+					window.scrollTo({top: 320, behavior: "smooth"});
+					break;
+					case 2:
+					document.getElementsByClassName('photos')[0].style.display='none';
+					document.getElementsByClassName('photos')[1].style.display='none';
+					document.getElementsByClassName('blender')[0].style.display='block';
+					document.getElementsByClassName('blender')[1].style.display='inline';
+					document.getElementsByClassName('inkscape')[0].style.display='none';
+					document.getElementsByClassName('inkscape')[1].style.display='none';
+					window.scrollTo({top: 320, behavior: "smooth"});
+					break;
+					case 3:
+					document.getElementsByClassName('blender')[0].style.display='none';
+					document.getElementsByClassName('blender')[1].style.display='none';
+					document.getElementsByClassName('inkscape')[0].style.display='block';
+					document.getElementsByClassName('inkscape')[1].style.display='inline';
+					document.getElementsByClassName('audiobook')[0].style.display='none';
+					document.getElementsByClassName('audiobook')[1].style.display='none';
+					window.scrollTo({top: 320, behavior: "smooth"});
+					break;
+					case 4:
+					document.getElementsByClassName('inkscape')[0].style.display='none';
+					document.getElementsByClassName('inkscape')[1].style.display='none';
+					document.getElementsByClassName('audiobook')[0].style.display='block';
+					document.getElementsByClassName('audiobook')[1].style.display='inline';
+					document.getElementsByClassName('movie')[0].style.display='none';
+					document.getElementsByClassName('movie')[1].style.display='none';
+					document.getElementsByClassName('arrow right')[0].style.display='block';
+					window.scrollTo({top: 320, behavior: "smooth"});
+					break;
+					case 5:
+					document.getElementsByClassName('audiobook')[0].style.display='none';
+					document.getElementsByClassName('audiobook')[1].style.display='none';
+					document.getElementsByClassName('movie')[0].style.display='block';
+					document.getElementsByClassName('movie')[1].style.display='inline';
+					document.getElementsByClassName('arrow right')[0].style.display='none';
+					window.scrollTo({top: 320, behavior: "smooth"});
+					break;
+				}
+			}
 		</script>
 	</body>
 </html>
