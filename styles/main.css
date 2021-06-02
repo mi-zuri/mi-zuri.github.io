@@ -256,7 +256,7 @@ section #media .about
 	left: 50%;
 	transform: translate(-50%, -50%);
 	
-	display: none;
+	display: block;
 }
 
 section #media .blender
@@ -266,7 +266,7 @@ section #media .blender
 	width: 100%;
 	height: 100%;
 	
-	display: block;
+	display: none;
 }
 
 section #media .blender iframe
