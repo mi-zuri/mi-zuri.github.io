@@ -311,8 +311,8 @@ section #media .photos
 
 section #media .photos img
 {
-	width: 20%;
-	height: 100%;
+	width: 100%;
+	height: auto;
 	float: left;
 }
 
