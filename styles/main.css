@@ -197,7 +197,7 @@ section .arrow
 	border-width: 0 5px 5px 0;
 	display: inline-block;
 	padding: 30px;
-	top: 50%;
+	top: 45%;
 }
 
 section .arrow:hover
@@ -256,16 +256,6 @@ section #media .about
 	left: 50%;
 	transform: translate(-50%, -50%);
 	
-	/*display: none;*/
-}
-
-section #media .photos
-{
-	display: none;
-}
-
-section #titles .photos
-{
 	display: none;
 }
 
@@ -276,7 +266,7 @@ section #media .blender
 	width: 100%;
 	height: 100%;
 	
-	display: none;
+	display: block;
 }
 
 section #media .blender iframe
@@ -292,7 +282,16 @@ section #titles .blender
 
 section #media .inkscape
 {
+	width: 100%;
+	height: 100%;
+	
 	display: none;
+}
+
+section #media .inkscape object
+{
+	width: 100%;
+	height: 100%;
 }
 
 section #titles .inkscape
@@ -300,8 +299,38 @@ section #titles .inkscape
 	display: none;
 }
 
+section #media .photos
+{
+	position: absolute;
+	
+	width: 100%;
+	height: 100%;
+	
+	display: none;
+}
+
+section #media .photos img
+{
+	width: 20%;
+	height: 100%;
+	float: left;
+}
+
+section #titles .photos
+{
+	display: none;
+}
+
 section #media .audiobook
 {
+	position: absolute;
+	
+	width: 100%;
+	margin: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
 	display: none;
 }
 
@@ -312,7 +341,18 @@ section #titles .audiobook
 
 section #media .movie
 {
+	position: absolute;
+	
+	width: 100%;
+	height: 100%;
+	
 	display: none;
+}
+
+section #media .movie iframe
+{
+	width: 100%;
+	height: 100%;
 }
 
 section #titles .movie
@@ -404,6 +444,7 @@ section #error
 	color: #A13C2C;
 	display: block;
 	transition: 0.3s;
+	white-space: nowrap;
 }
 
 #sidebar #list a:hover
@@ -431,7 +472,7 @@ section #error
 
 @media (min-width: 1800px)
 {
-section {height: 900px;}
+section {height: 750px;}
 section #media {width: 1280px; height: 720px;}
 section #media .about {font-size: 28px;}
 section #titles {font-size: 25px;}
@@ -480,6 +521,8 @@ section #error {display: initial;}
 
 @media (max-width: 750px)
 {
+#start {background-image: url("img/starter2.jpg");}
+	
 #header-bg #menuBtn {display:none;}
 section .arrow {padding: 4vw;}
 }

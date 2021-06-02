@@ -21,7 +21,7 @@
 		<div id="container">
 			<header>
 				<div id="header-bg">
-					<a onclick="changeSlide(projectNumber = 0)"><h1>Michu</h1></a>
+					<a onclick="centerScreen()"><h1>Michu</h1></a>
 					<div id="items">
 						<div id="menuBtn" onclick="toggleNav(this)">
 							<div id="bar1"></div>
@@ -35,32 +35,29 @@
 				<i class="arrow left" onclick="changeSlide(projectNumber--)"></i>
 				<i class="arrow right" onclick="changeSlide(projectNumber++)"></i>
 				<div id="media">
-					<div class="about"><p>Witam <3<br/><br/>Nazywam się Michał Żurawski i jestem uczniem klasy 2GF w II Liceum Ogólnokształcącym im. Mieszka I w Szczecinie.<br/><br/>Strona ta jest obecnie poświęcona pracom, które zostaly przeze mnie wykonane przez ostatni rok na lekcje multimediów.</p></div>
-					<div class="photos"></div>
-					<div class="blender"><iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe></div>
-					<div class="inkscape"></div>
-					<div class="audiobook"></div>
-					<div class="movie"></div>
+					<div class="about"><p><3</p></div>
+					<div class="blender"><iframe src=https://www.youtube.com/embed/aSv_AMvEzAs></iframe></div>
+					<div class="inkscape"><object data="Firma.pdf" type="application/pdf"></object></div>
+					<div class="photos"><img src="images/1.JPG"/><img src="images/2.JPG"/><img src="images/3.JPG"/><img src="images/2.JPG"/><img src="images/1.JPG"/></div>
+					<div class="audiobook"><audio controls><source src="audiobook.mp3" type="audio/mpeg"></audio></div>
+					<div class="movie"><iframe src=https://www.youtube.com/embed/aSv_AMvEzAs></iframe></div>
 				</div>
 				<div id="titles">
-					<div class="photos"><p>Moje zdjęcia</p></div>
-					<div class="blender"><p>Animacja na 75-lecie szkoły</p></div>
-					<div class="inkscape"><p>Grafika wektorowa "Firma"</p></div>
+					<div class="blender"><p>Animacja</p></div>
+					<div class="inkscape"><p>Grafika wektorowa</p></div>
+					<div class="photos"><p>Fotografia</p></div>
 					<div class="audiobook"><p>Audiobook</p></div>
-					<div class="movie"><p>Film "Stop alkoholowi"</p></div>
+					<div class="movie"><p>Film</p></div>
 				</div>
-				<div id="error"><p>Unfortunately your screen size is too low to support this page<br/>:(</p></div>
+				<div id="error"><p>Unfortunately your browser/screen size is too small to support this page<br/>:(</p></div>
 			</section>
 			<nav>
 				<div id="sidebar">
 					<div id="padding"></div>
 					<div id="list">
-						<a href="#1">About</a>
-						<a href="#2">Services</a>
-						<a href="#3">Clients</a>
-						<a href="#4">Contact</a>
+						<a href="#1">Pliki do pobrania</a>
 					</div>
-					<div id="ver"><p>ver. 1.1.5a</p></div>
+					<div id="ver"><p>ver. 1.1.6</p></div>
 				</div>
 			</nav>
 			<footer>
@@ -83,7 +80,6 @@
 				document.getElementById('stopScroll').style.overflow='scroll';
 				changeSlide();
 			}
-			
 			
 		
 			var toggleBtn = false;
@@ -120,83 +116,96 @@
 			windowCheck.addListener(checkNav);
 			
 			
-			/*var windowSize = 320;
 			
-			function assignWindowSize(){
-				if (window.matchMedia("(min-width: 1350px)")){
-				windowSize = 320;
-				} else if (window.matchMedia("(min-width: 450px) and (max-width: 1350px)")){
-				windowSize = 200;
-				} else if (window.matchMedia("(min-width: 450px) and (max-width: 450px)")){
-				windowSize = 200;
-				}
-			}*/
+			function centerScreen(){
+				window.scrollTo({top: 220, behavior: "smooth"});
+			}
+			
 			
 			//change "slides"
-			var projectNumber = 0;
+			var projectNumber = 1;
 			
 			function changeSlide(){
 				switch(projectNumber){
-					case 0:
-					document.getElementsByClassName('about')[0].style.display='block';
-					document.getElementsByClassName('photos')[0].style.display='none';
-					document.getElementsByClassName('photos')[1].style.display='none';
-					document.getElementsByClassName('blender')[0].style.display='none';
+					case 1:
+					document.getElementsByClassName('about')[0].style.display='none';
+					document.getElementsByClassName('blender')[0].style.display='block';
 					document.getElementsByClassName('blender')[1].style.display='none';
 					document.getElementsByClassName('inkscape')[0].style.display='none';
 					document.getElementsByClassName('inkscape')[1].style.display='none';
+					document.getElementsByClassName('photos')[0].style.display='none';
+					document.getElementsByClassName('photos')[1].style.display='none';
 					document.getElementsByClassName('audiobook')[0].style.display='none';
 					document.getElementsByClassName('audiobook')[1].style.display='none';
 					document.getElementsByClassName('movie')[0].style.display='none';
 					document.getElementsByClassName('movie')[1].style.display='none';
 					document.getElementsByClassName('arrow left')[0].style.display='none';
 					document.getElementsByClassName('arrow right')[0].style.display='block';
-					window.scrollTo({top: 320, behavior: "smooth"});
-					break;
-					case 1:
-					document.getElementsByClassName('about')[0].style.display='none';
-					document.getElementsByClassName('photos')[0].style.display='block';
-					document.getElementsByClassName('photos')[1].style.display='inline';
-					document.getElementsByClassName('blender')[0].style.display='none';
-					document.getElementsByClassName('blender')[1].style.display='none';
-					document.getElementsByClassName('arrow left')[0].style.display='block';
-					window.scrollTo({top: 320, behavior: "smooth"});
+					centerScreen();
 					break;
 					case 2:
-					document.getElementsByClassName('photos')[0].style.display='none';
-					document.getElementsByClassName('photos')[1].style.display='none';
-					document.getElementsByClassName('blender')[0].style.display='block';
-					document.getElementsByClassName('blender')[1].style.display='inline';
-					document.getElementsByClassName('inkscape')[0].style.display='none';
-					document.getElementsByClassName('inkscape')[1].style.display='none';
-					window.scrollTo({top: 320, behavior: "smooth"});
-					break;
-					case 3:
+					document.getElementsByClassName('about')[0].style.display='none';
 					document.getElementsByClassName('blender')[0].style.display='none';
 					document.getElementsByClassName('blender')[1].style.display='none';
 					document.getElementsByClassName('inkscape')[0].style.display='block';
-					document.getElementsByClassName('inkscape')[1].style.display='inline';
+					document.getElementsByClassName('inkscape')[1].style.display='none';
+					document.getElementsByClassName('photos')[0].style.display='none';
+					document.getElementsByClassName('photos')[1].style.display='none';
 					document.getElementsByClassName('audiobook')[0].style.display='none';
 					document.getElementsByClassName('audiobook')[1].style.display='none';
-					window.scrollTo({top: 320, behavior: "smooth"});
-					break;
-					case 4:
-					document.getElementsByClassName('inkscape')[0].style.display='none';
-					document.getElementsByClassName('inkscape')[1].style.display='none';
-					document.getElementsByClassName('audiobook')[0].style.display='block';
-					document.getElementsByClassName('audiobook')[1].style.display='inline';
 					document.getElementsByClassName('movie')[0].style.display='none';
 					document.getElementsByClassName('movie')[1].style.display='none';
+					document.getElementsByClassName('arrow left')[0].style.display='block';
 					document.getElementsByClassName('arrow right')[0].style.display='block';
-					window.scrollTo({top: 320, behavior: "smooth"});
+					centerScreen();
+					break;
+					case 3:
+					document.getElementsByClassName('about')[0].style.display='none';
+					document.getElementsByClassName('blender')[0].style.display='none';
+					document.getElementsByClassName('blender')[1].style.display='none';
+					document.getElementsByClassName('inkscape')[0].style.display='none';
+					document.getElementsByClassName('inkscape')[1].style.display='none';
+					document.getElementsByClassName('photos')[0].style.display='block';
+					document.getElementsByClassName('photos')[1].style.display='none';
+					document.getElementsByClassName('audiobook')[0].style.display='none';
+					document.getElementsByClassName('audiobook')[1].style.display='none';
+					document.getElementsByClassName('movie')[0].style.display='none';
+					document.getElementsByClassName('movie')[1].style.display='none';
+					document.getElementsByClassName('arrow left')[0].style.display='block';
+					document.getElementsByClassName('arrow right')[0].style.display='block';
+					centerScreen();
+					break;
+					case 4:
+					document.getElementsByClassName('about')[0].style.display='none';
+					document.getElementsByClassName('blender')[0].style.display='none';
+					document.getElementsByClassName('blender')[1].style.display='none';
+					document.getElementsByClassName('inkscape')[0].style.display='none';
+					document.getElementsByClassName('inkscape')[1].style.display='none';
+					document.getElementsByClassName('photos')[0].style.display='none';
+					document.getElementsByClassName('photos')[1].style.display='none';
+					document.getElementsByClassName('audiobook')[0].style.display='block';
+					document.getElementsByClassName('audiobook')[1].style.display='none';
+					document.getElementsByClassName('movie')[0].style.display='none';
+					document.getElementsByClassName('movie')[1].style.display='none';
+					document.getElementsByClassName('arrow left')[0].style.display='block';
+					document.getElementsByClassName('arrow right')[0].style.display='block';
+					centerScreen();
 					break;
 					case 5:
+					document.getElementsByClassName('about')[0].style.display='none';
+					document.getElementsByClassName('blender')[0].style.display='none';
+					document.getElementsByClassName('blender')[1].style.display='none';
+					document.getElementsByClassName('inkscape')[0].style.display='none';
+					document.getElementsByClassName('inkscape')[1].style.display='none';
+					document.getElementsByClassName('photos')[0].style.display='none';
+					document.getElementsByClassName('photos')[1].style.display='none';
 					document.getElementsByClassName('audiobook')[0].style.display='none';
 					document.getElementsByClassName('audiobook')[1].style.display='none';
 					document.getElementsByClassName('movie')[0].style.display='block';
-					document.getElementsByClassName('movie')[1].style.display='inline';
+					document.getElementsByClassName('movie')[1].style.display='none';
+					document.getElementsByClassName('arrow left')[0].style.display='block';
 					document.getElementsByClassName('arrow right')[0].style.display='none';
-					window.scrollTo({top: 320, behavior: "smooth"});
+					centerScreen();
 					break;
 				}
 			}
