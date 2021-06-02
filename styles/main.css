@@ -301,10 +301,11 @@ section #media .inkscape object
 section #media .inkscape a
 {
 	position: absolute;
+	z-index: 0;
 	color: #4C424A;
 	text-decoration: none;
 	width: 100%;
-	top: 50%;
+	top: 55%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	
