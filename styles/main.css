@@ -303,7 +303,6 @@ section #media .inkscape object
 section #media .inkscape a
 {
 	position: absolute;
-	z-index: -1;
 	color: #4C424A;
 	text-decoration: none;
 	width: 100%;
