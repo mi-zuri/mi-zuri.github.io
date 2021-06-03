@@ -517,6 +517,8 @@ section {height: 400px;}
 section #media {width: 320px; height: 180px;}
 section #media .about {font-size: 16px;}
 section #titles {font-size: 15px; bottom: 50px;}
+
+section #media .inkscape object{display: none;}
 }
 
 @media (min-width: 350px) and (max-width: 450px)
@@ -527,7 +529,6 @@ section #media .about {font-size: 14px;}
 section #titles {font-size: 12px;}
 
 section #media .inkscape object{display: none;}
-section #media .inkscape a{display: block;}
 }
 
 @media (max-width: 350px)
