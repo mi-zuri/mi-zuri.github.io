@@ -35,18 +35,20 @@
 				<i class="arrow left" onclick="changeSlide(projectNumber--)"></i>
 				<i class="arrow right" onclick="changeSlide(projectNumber++)"></i>
 				<div id="media">
-					<div class="about"><p><3<br/><br/>Oto prezentacja moich prac z multimediów<br/><br/>(Fotografia oraz film są tymczasowe - do uzupełnienia)<br/><br/>xoxo</p></div>
-					<div class="photos"><img src="images/2.JPG"/></div>
+					<div class="about"><p><3<br/><br/>Oto prezentacja moich prac z multimediów<br/><br/>(Film do uzupełnienia)<br/><br/>xoxo</p></div>
+					<div class="photos"><img id="bois" src="images/1.jpg"/><img id="shimmer" src="images/2.JPG"/><img class="other withMargin" src="images/3.JPG"/><img class="other withMargin" src="images/4.JPG"/><img class="other withMargin" src="images/5.JPG"/><img class="other" src="images/6.JPG"/></div>
 					<div class="inkscape"><object data="Firma.pdf" type="application/pdf"></object><a href="Firma.pdf" target="_blank">PDF Link</a></div>
 					<div class="audiobook"><audio controls><source src="audiobook.mp3" type="audio/mpeg"></audio></div>
 					<div class="blender"><iframe src=https://www.youtube.com/embed/aSv_AMvEzAs></iframe></div>
-					<div class="movie"><iframe src=https://www.youtube.com/embed/0yfH53kBiYA></iframe></div>
+					<div class="ad"><iframe src=https://www.youtube.com/embed/SAKEeaiJAgE></iframe></div>
+					<div class="movie"><iframe src=https://www.youtube.com/embed/></iframe></div>
 				</div>
 				<div id="titles">
 					<div class="photos"><p>Fotografia</p></div>
 					<div class="inkscape"><p>Grafika wektorowa</p></div>
 					<div class="audiobook"><p>Audiobook</p></div>
 					<div class="blender"><p>Animacja</p></div>
+					<div class="ad"><p>Reklama z Podstaw Przedsiębiorczości</p></div>
 					<div class="movie"><p>Film</p></div>
 				</div>
 				<div id="error"><p>Unfortunately your screen resolution is too small to support this page<br/>:(</p></div>
@@ -59,9 +61,10 @@
 						<a href="#LOF" onclick="changeSlide(projectNumber = 2)">Grafika wektorowa</a>
 						<a href="#loVe" onclick="changeSlide(projectNumber = 3)">Audiobook</a>
 						<a href="#lov" onclick="changeSlide(projectNumber = 4)">Animacja</a>
-						<a href="#lovE" onclick="changeSlide(projectNumber = 5)">Film</a>
+						<a href="#uWu" onclick="changeSlide(projectNumber = 5)">*Reklama z PP</a>
+						<a href="#lovE" onclick="changeSlide(projectNumber = 6)">Film</a>
 					</div>
-					<div id="ver"><p>ver. 1.1.10c</p></div>
+					<div id="ver"><p>ver. 1.2</p></div>
 				</div>
 			</nav>
 			<footer>
@@ -90,8 +93,8 @@
 			var windowCheck = window.matchMedia("(max-width: 750px)")
 			
 			function openNav() {
-				document.getElementById("sidebar").style.width = "250px";
-				document.getElementById("container").style.marginRight = "250px";
+				document.getElementById("sidebar").style.width = "260px";
+				document.getElementById("container").style.marginRight = "260px";
 				toggleBtn = true;
 			}
 
@@ -142,6 +145,8 @@
 					document.getElementsByClassName('audiobook')[1].style.display='none';
 					document.getElementsByClassName('blender')[0].style.display='none';
 					document.getElementsByClassName('blender')[1].style.display='none';
+					document.getElementsByClassName('ad')[0].style.display='none';
+					document.getElementsByClassName('ad')[1].style.display='none';
 					document.getElementsByClassName('movie')[0].style.display='none';
 					document.getElementsByClassName('movie')[1].style.display='none';
 					if(window.matchMedia("(min-width: 350px)").matches){
@@ -160,6 +165,8 @@
 					document.getElementsByClassName('audiobook')[1].style.display='none';
 					document.getElementsByClassName('blender')[0].style.display='none';
 					document.getElementsByClassName('blender')[1].style.display='none';
+					document.getElementsByClassName('ad')[0].style.display='none';
+					document.getElementsByClassName('ad')[1].style.display='none';
 					document.getElementsByClassName('movie')[0].style.display='none';
 					document.getElementsByClassName('movie')[1].style.display='none';
 					document.getElementsByClassName('arrow left')[0].style.display='block';
@@ -176,6 +183,8 @@
 					document.getElementsByClassName('audiobook')[1].style.display='none';
 					document.getElementsByClassName('blender')[0].style.display='none';
 					document.getElementsByClassName('blender')[1].style.display='none';
+					document.getElementsByClassName('ad')[0].style.display='none';
+					document.getElementsByClassName('ad')[1].style.display='none';
 					document.getElementsByClassName('movie')[0].style.display='none';
 					document.getElementsByClassName('movie')[1].style.display='none';
 					document.getElementsByClassName('arrow left')[0].style.display='block';
@@ -192,6 +201,8 @@
 					document.getElementsByClassName('audiobook')[1].style.display='none';
 					document.getElementsByClassName('blender')[0].style.display='none';
 					document.getElementsByClassName('blender')[1].style.display='none';
+					document.getElementsByClassName('ad')[0].style.display='none';
+					document.getElementsByClassName('ad')[1].style.display='none';
 					document.getElementsByClassName('movie')[0].style.display='none';
 					document.getElementsByClassName('movie')[1].style.display='none';
 					document.getElementsByClassName('arrow left')[0].style.display='block';
@@ -208,6 +219,8 @@
 					document.getElementsByClassName('audiobook')[1].style.display='none';
 					document.getElementsByClassName('blender')[0].style.display='block';
 					document.getElementsByClassName('blender')[1].style.display='none';
+					document.getElementsByClassName('ad')[0].style.display='none';
+					document.getElementsByClassName('ad')[1].style.display='none';
 					document.getElementsByClassName('movie')[0].style.display='none';
 					document.getElementsByClassName('movie')[1].style.display='none';
 					document.getElementsByClassName('arrow left')[0].style.display='block';
@@ -224,6 +237,26 @@
 					document.getElementsByClassName('audiobook')[1].style.display='none';
 					document.getElementsByClassName('blender')[0].style.display='none';
 					document.getElementsByClassName('blender')[1].style.display='none';
+					document.getElementsByClassName('ad')[0].style.display='block';
+					document.getElementsByClassName('ad')[1].style.display='none';
+					document.getElementsByClassName('movie')[0].style.display='none';
+					document.getElementsByClassName('movie')[1].style.display='none';
+					document.getElementsByClassName('arrow left')[0].style.display='block';
+					document.getElementsByClassName('arrow right')[0].style.display='block';
+					centerScreen();
+					break;
+					case 6:
+					document.getElementsByClassName('about')[0].style.display='none';
+					document.getElementsByClassName('photos')[0].style.display='none';
+					document.getElementsByClassName('photos')[1].style.display='none';
+					document.getElementsByClassName('inkscape')[0].style.display='none';
+					document.getElementsByClassName('inkscape')[1].style.display='none';
+					document.getElementsByClassName('audiobook')[0].style.display='none';
+					document.getElementsByClassName('audiobook')[1].style.display='none';
+					document.getElementsByClassName('blender')[0].style.display='none';
+					document.getElementsByClassName('blender')[1].style.display='none';
+					document.getElementsByClassName('ad')[0].style.display='none';
+					document.getElementsByClassName('ad')[1].style.display='none';
 					document.getElementsByClassName('movie')[0].style.display='block';
 					document.getElementsByClassName('movie')[1].style.display='none';
 					document.getElementsByClassName('arrow left')[0].style.display='block';
